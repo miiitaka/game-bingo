@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>BINGO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="bingo.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div id="result" class="result"></div>
+  <ul id="number" class="number"></ul>
+  <div class="wrapper-button">
+    <button class="button">START</button>
+  </div>
+
+  <audio id="sound-start" preload="auto">
+    <source src="start.mp3" type="audio/mp3">
+  </audio>
+  <audio id="sound-stop" preload="auto">
+    <source src="stop.mp3" type="audio/mp3">
+  </audio>
+</div>
+</body>
+</html>
