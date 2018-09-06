@@ -10,20 +10,22 @@ $(function(){
     number,
     result,
     $number = $("#number"),
-    $result = $("#result");
+    $result = $("#result"),
+    $sound_play = $("#sound-play"),
+    $sound_pause = $("#sound-pause");
 
   for(var i = 1; i <= max; i++) {
     bingo.push(i);
     $number.append($("<li>").text(("0" + i).slice(-2)));
   }
 
-  $("button").on("click", function(){
+  $("#button").on("click", function(){
     if(status) {
       status = false;
       $(this).text("STOP");
-      document.getElementById("sound-start").play();
-      document.getElementById("sound-stop").pause();
-      document.getElementById("sound-stop").currentTime = 0;
+      $sound_play.trigger("play");
+      $sound_pause.trigger("pause");
+      $sound_pause[0].currentTime = 0;
 
       roulette = setInterval(function(){
         random = Math.floor(Math.random() * bingo.length);
@@ -34,9 +36,9 @@ $(function(){
     } else {
       status = true;
       $(this).text("START");
-      document.getElementById("sound-stop").play();
-      document.getElementById("sound-start").pause();
-      document.getElementById("sound-start").currentTime = 0;
+      $sound_pause.trigger("play");
+      $sound_play.trigger("pause");
+      $sound_play[0].currentTime = 0;
 
       clearInterval(roulette);
 
