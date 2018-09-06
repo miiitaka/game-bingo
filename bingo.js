@@ -4,7 +4,7 @@ $(function(){
   var
     max = 50,
     bingo = [],
-    status = 0,
+    status = true,
     roulette,
     random,
     number,
@@ -14,12 +14,12 @@ $(function(){
 
   for(var i = 1; i <= max; i++) {
     bingo.push(i);
-    $number.append("<li>" + ("0" + i).slice(-2) + "</li>");
+    $number.append($("<li>").text(("0" + i).slice(-2)));
   }
 
   $("button").on("click", function(){
-    if(status === 0) {
-      status = 1;
+    if(status) {
+      status = false;
       $(this).text("STOP");
       document.getElementById("sound-start").play();
       document.getElementById("sound-stop").pause();
@@ -32,7 +32,7 @@ $(function(){
       }, 10);
 
     } else {
-      status = 0;
+      status = true;
       $(this).text("START");
       document.getElementById("sound-stop").play();
       document.getElementById("sound-start").pause();
