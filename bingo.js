@@ -32,7 +32,6 @@ $(function(){
         number = bingo[random];
         $result.text(number);
       }, 10);
-
     } else {
       status = true;
       $(this).text("START");
@@ -46,7 +45,7 @@ $(function(){
       bingo.splice(random, 1);
 
       $result.text(result);
-      $number.find("li").eq(parseInt(number, 10) - 1).addClass("hit");
+      $number.find("li").eq(parseInt(result, 10) - 1).addClass("hit");
     }
   });
 });
