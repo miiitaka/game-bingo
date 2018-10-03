@@ -5,7 +5,6 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  width: 600px;
 }
 
 .result {
@@ -31,6 +30,12 @@ body {
   width: 500px;
 }
 
+@media (max-width: 767px) {
+  .number {
+    width: 100%;
+  }
+}
+
 .number li {
   align-items: center;
   border: solid 1px #004c8c;
@@ -47,7 +52,7 @@ body {
 }
 
 .wrapper-button {
-  padding: 20px 0 0;
+  padding: 20px 0 50px;
   text-align: center;
 }
 
@@ -73,4 +78,8 @@ body {
   background: #668ad8;
   box-shadow: 0 0 0 5px #668ad8;
   cursor: pointer;
+}
+
+footer {
+  text-align: center;
 }
